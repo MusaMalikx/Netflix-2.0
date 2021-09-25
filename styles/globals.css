@@ -4,8 +4,9 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background-color: rgba(0,0,0,0.7);
 }
-
+/* 
 a {
   color: inherit;
   text-decoration: none;
@@ -13,4 +14,15 @@ a {
 
 * {
   box-sizing: border-box;
+} */
+
+/* ./styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  body{
+    @apply scrollbar-hide
+  }
 }
