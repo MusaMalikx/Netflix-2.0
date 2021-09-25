@@ -6,7 +6,7 @@ const Banner = ({ movie }) => {
         <div className='pt-16 relative'>
             <Image className='' src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`} alt="Banner" width='1920' height='1080' />
             {/* <div className='absolute z-30 top-0 h-screen backdrop-filter backdrop-opacity-80 w-screen bg-opacity-25 bg-gradient-to-t from-gray-500 via-gray-700 to-black' /> */}
-            <div className='absolute left-6 bottom-10 md:bottom-20'>
+            <div className='absolute left-6 bottom-7 md:bottom-16'>
                 <h1 className='text-2xl md:text-5xl lg:text-7xl font-black uppercase tracking-widest'
                     style={{
                         textShadow: "0 0 5px red, 0 0 8px black",

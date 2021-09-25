@@ -79,8 +79,8 @@ export default function Home({
           <List name="Trending" list={data.results} />
           <List name="Netflix Originals" list={netflixOriginals.results} />
           <List name="Comedy Movies" list={comedyMovies.results} />
-          <List name="horrorMovies" list={horrorMovies.results} />
-          <List name="RomanceMovies" list={romanceMovies.results} />
+          <List name="Horror Movies" list={horrorMovies.results} />
+          <List name="Romance Movies" list={romanceMovies.results} />
           <List name="Documentaries" list={documentaries.results} />
         </div>
       </div>
