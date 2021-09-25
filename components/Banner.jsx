@@ -2,9 +2,6 @@ import Image from "next/image";
 
 const Banner = ({ movie }) => {
 
-    // console.log(movie);
-    console.log(process.env.API_KEY)
-
     return (
         <div className='pt-16 relative'>
             <Image className='' src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`} alt="Banner" width='1920' height='1080' />
