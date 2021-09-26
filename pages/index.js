@@ -84,11 +84,11 @@ export default function Home({
         <Banner movies={data.results} />
         <div className="pb-10">
           <List name="Trending" list={data.results} />
-          <List name="Netflix Originals" list={netflixOriginals.results} />
-          <List name="Comedy Movies" list={comedyMovies.results} />
-          <List name="Horror Movies" list={horrorMovies.results} />
-          <List name="Romance Movies" list={romanceMovies.results} />
-          <List name="Documentaries" list={documentaries.results} />
+          <List name="Netflix Originals" list={netflixOriginals.results} tp="tv" />
+          <List name="Comedy Movies" list={comedyMovies.results} tp="movie" />
+          <List name="Horror Movies" list={horrorMovies.results} tp="movie" />
+          <List name="Romance Movies" list={romanceMovies.results} tp="movie" />
+          <List name="Documentaries" list={documentaries.results} tp="movie" />
         </div>
       </div>
     </>

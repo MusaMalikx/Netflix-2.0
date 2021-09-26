@@ -28,7 +28,7 @@ const Navbar = () => {
                     </div>
                     <div className='flex justify-between'>
                         <p className='cursor-pointer p-2 border border-black hover:border-red-600'>Movies</p>
-                        <p className='mx-3 cursor-pointer p-2 border border-black hover:border-red-600'>TV Shows</p>
+                        <p className='cursor-pointer p-2 border border-black hover:border-red-600'>TV Shows</p>
                         <p className='cursor-pointer p-2 border border-black hover:border-red-600'>New and Popular</p>
                     </div>
                 </div>
