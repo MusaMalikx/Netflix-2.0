@@ -62,6 +62,13 @@ export default function Home({
     setMovie(data.results[Math.floor(Math.random() * data.results.length - 1)]);
   }, [data.results]);
 
+  // var arr = [];
+  // while (arr.length < 8) {
+  //   var r = Math.floor(Math.random() * 100) + 1;
+  //   if (arr.indexOf(r) === -1) arr.push(r);
+  // }
+  // console.log(arr);
+
   //console.log(movie);
 
   return (
@@ -74,8 +81,8 @@ export default function Home({
 
       <div className="text-white">
         <Navbar />
-        <Banner movie={movie} />
-        <div className='pb-10'>
+        <Banner movies={data.results} />
+        <div className="pb-10">
           <List name="Trending" list={data.results} />
           <List name="Netflix Originals" list={netflixOriginals.results} />
           <List name="Comedy Movies" list={comedyMovies.results} />
