@@ -20,8 +20,8 @@ const BLogo = ({ movie }) => {
                         textShadow: "0 0 4px black, 0 0 3px black",
                     }}
                 >{movie.overview}</p>
-                <button className=' mt-3 text-xs md:text-lg px-4 py-2 rounded-md border-2 border-red-600 text-red-600 bg-gray-900 mr-4 hover:bg-black'>Play</button>
-                <button className='px-4 text-xs md:text-lg py-2 text-black rounded-md hover:bg-black border-2 border-red-600 hover:text-red-600 bg-gray-200'>Show more</button>
+                <button className='bg-opacity-80 uppercase mt-3 text-xs md:text-lg px-4 py-2 rounded-sm border-2 border-red-600 text-red-600 bg-gray-900 mr-4 hover:bg-black'>Play</button>
+                <button className='bg-opacity-80 px-4 text-xs md:text-lg py-2 text-black rounded-sm hover:bg-black border-2 border-red-600 hover:text-red-600 bg-gray-200'>Show more</button>
             </div>
         </div>
     )

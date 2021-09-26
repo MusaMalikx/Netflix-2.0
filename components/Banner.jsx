@@ -13,7 +13,7 @@ const Banner = ({ movies }) => {
                 showIndicators={false}
                 showStatus={false}
                 showThumbs={false}
-                interval={4000}
+                interval={7000}
             >
                 {
                     movies.slice(0, 10).map(movie => (
