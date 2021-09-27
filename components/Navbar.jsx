@@ -7,11 +7,12 @@ import Logo from '../assets/netflix-logo.svg';
 import Avatar from '../assets/netflix-avatar.png'
 import { MoreVert, Notifications } from '@mui/icons-material';
 import Image from "next/image";
+import { useRouter } from 'next/router'
 
 const Navbar = () => {
 
     const [isScrolled, setIsScrolled] = useState(false);
-
+    const router = useRouter();
     // window.onscroll = () => {
     //     setIsScrolled(window.pageYOffset === 0 ? false : true);
     //     return () => (window.onscroll = null);
@@ -23,11 +24,13 @@ const Navbar = () => {
             <div className='bg-black text-white flex justify-between text-xs md:text-sm p-3.5 border-b-2 border-red-600'>
 
                 <div className='flex items-center'>
-                    <div className="h-10 w-24 mb-2 mr-3">
+                    <div onClick={() => router.push("/")}
+                        className="h-10 w-24 mb-2 mr-3 cursor-pointer">
                         <Image src={Logo} alt="logo" width="1920" height="1080" />
                     </div>
                     <div className='flex justify-between'>
-                        <p className='cursor-pointer p-2 border border-black hover:border-red-600'>Movies</p>
+                        <p onClick={() => router.push("/movies")}
+                            className='cursor-pointer p-2 border border-black hover:border-red-600'>Movies</p>
                         <p className='cursor-pointer p-2 border border-black hover:border-red-600'>TV Shows</p>
                         <p className='cursor-pointer p-2 border border-black hover:border-red-600'>New and Popular</p>
                     </div>
