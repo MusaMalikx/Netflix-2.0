@@ -4,6 +4,8 @@ import Banner from "../components/Banner";
 import Navbar from "../components/Navbar";
 import List from "../components/List";
 import tvShowsRequests from "../tvShowsRequest";
+import { movieC, popularC, tvC } from "../redux/slices/navbarSlice";
+import { useDispatch } from "react-redux";
 
 export async function getServerSideProps(context) {
     const [
@@ -78,23 +80,6 @@ export async function getServerSideProps(context) {
     };
 }
 
-// actionAdventureShows,
-// animationShows,           
-// comedyShows,              
-// crimeShows,               
-// documentaryShows,         
-// dramaShows,               
-// familyShows,              
-// kidsShows,                
-// mysteryShows,             
-// newsShows,                
-// realityShows,             
-// sciFiFantasyShows,    
-// soapShows,                
-// talkShows,                
-// warPoliticsShows,      
-// westernShows,             
-
 export default function Home({
     data,
     actionAdventureShows,
@@ -114,16 +99,13 @@ export default function Home({
     warPoliticsShows,
     westernShows,
 }) {
-    //console.log(data);
-    //console.log(process.env.API_KEY)
-    //console.log(netflixOriginals)
 
-    // const [movie, setMovie] = useState({});
-
-    // useEffect(() => {
-    //     setMovie(data.results[Math.floor(Math.random() * data.results.length - 1)]);
-    // }, [data.results]);
-
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(movieC(false));
+        dispatch(tvC(true));
+        dispatch(popularC(false));
+    }, [dispatch])
 
     return (
         <>

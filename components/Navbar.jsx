@@ -8,6 +8,8 @@ import Avatar from '../assets/netflix-avatar.png'
 import { MoreVert, Notifications } from '@mui/icons-material';
 import Image from "next/image";
 import { useRouter } from 'next/router'
+import { useSelector } from 'react-redux';
+import { selectMovie, selectPopular, selectTv } from '../redux/slices/navbarSlice';
 
 const Navbar = () => {
 
@@ -17,6 +19,10 @@ const Navbar = () => {
     //     setIsScrolled(window.pageYOffset === 0 ? false : true);
     //     return () => (window.onscroll = null);
     // }
+
+    const mo = useSelector(selectMovie);
+    const tv = useSelector(selectTv);
+    const po = useSelector(selectPopular);
 
     return (
         <div className='fixed z-10 w-screen'>
@@ -30,9 +36,9 @@ const Navbar = () => {
                     </div>
                     <div className='flex justify-between'>
                         <p onClick={() => router.push("/movies")}
-                            className='cursor-pointer p-2 border border-black hover:border-red-600'>Movies</p>
+                            className={`cursor-pointer p-2 border ${mo ? 'border-red-600' : 'border-black'} hover:border-red-600`}>Movies</p>
                         <p onClick={() => router.push("/tvshows")}
-                            className='cursor-pointer p-2 border border-black hover:border-red-600'>TV Shows</p>
+                            className={`cursor-pointer p-2 border ${tv ? 'border-red-600' : 'border-black'} hover:border-red-600`}>TV Shows</p>
                         <p className='cursor-pointer p-2 border border-black hover:border-red-600'>New and Popular</p>
                     </div>
                 </div>

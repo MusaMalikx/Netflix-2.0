@@ -4,6 +4,8 @@ import Banner from "../components/Banner";
 import Navbar from "../components/Navbar";
 import List from "../components/List";
 import requests from "../request";
+import { movieC, popularC, tvC } from "../redux/slices/navbarSlice";
+import { useDispatch } from "react-redux";
 
 export async function getServerSideProps(context) {
   const [
@@ -52,24 +54,13 @@ export default function Home({
   romanceMovies,
   documentaries,
 }) {
-  //console.log(data);
-  //console.log(process.env.API_KEY)
-  //console.log(netflixOriginals)
 
-  // const [movie, setMovie] = useState({});
-
-  // useEffect(() => {
-  //   setMovie(data.results[Math.floor(Math.random() * data.results.length - 1)]);
-  // }, [data.results]);
-
-  // var arr = [];
-  // while (arr.length < 8) {
-  //   var r = Math.floor(Math.random() * 100) + 1;
-  //   if (arr.indexOf(r) === -1) arr.push(r);
-  // }
-  // console.log(arr);
-
-  //console.log(movie);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(movieC(false));
+    dispatch(tvC(false));
+    dispatch(popularC(false));
+  }, [dispatch])
 
   return (
     <>

@@ -5,6 +5,8 @@ import Navbar from "../components/Navbar";
 import List from "../components/List";
 //import requests from "../request";
 import moviesRequests from "../moviesRequest"
+import { useDispatch } from "react-redux";
+import { movieC, popularC, tvC } from "../redux/slices/navbarSlice";
 
 export async function getServerSideProps(context) {
     const [
@@ -126,6 +128,12 @@ export default function Home({
     // useEffect(() => {
     //     setMovie(data.results[Math.floor(Math.random() * data.results.length - 1)]);
     // }, [data.results]);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(movieC(true));
+        dispatch(tvC(false));
+        dispatch(popularC(false));
+    }, [dispatch])
 
     return (
         <>
