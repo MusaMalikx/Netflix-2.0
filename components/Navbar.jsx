@@ -31,7 +31,8 @@ const Navbar = () => {
                     <div className='flex justify-between'>
                         <p onClick={() => router.push("/movies")}
                             className='cursor-pointer p-2 border border-black hover:border-red-600'>Movies</p>
-                        <p className='cursor-pointer p-2 border border-black hover:border-red-600'>TV Shows</p>
+                        <p onClick={() => router.push("/tvshows")}
+                            className='cursor-pointer p-2 border border-black hover:border-red-600'>TV Shows</p>
                         <p className='cursor-pointer p-2 border border-black hover:border-red-600'>New and Popular</p>
                     </div>
                 </div>

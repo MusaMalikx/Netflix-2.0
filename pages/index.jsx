@@ -56,11 +56,11 @@ export default function Home({
   //console.log(process.env.API_KEY)
   //console.log(netflixOriginals)
 
-  const [movie, setMovie] = useState({});
+  // const [movie, setMovie] = useState({});
 
-  useEffect(() => {
-    setMovie(data.results[Math.floor(Math.random() * data.results.length - 1)]);
-  }, [data.results]);
+  // useEffect(() => {
+  //   setMovie(data.results[Math.floor(Math.random() * data.results.length - 1)]);
+  // }, [data.results]);
 
   // var arr = [];
   // while (arr.length < 8) {
