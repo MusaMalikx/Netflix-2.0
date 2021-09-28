@@ -41,7 +41,8 @@ const Navbar = () => {
                             className={`cursor-pointer p-2 border ${mo ? 'border-red-600' : 'border-black'} hover:border-red-600`}>Movies</p>
                         <p onClick={() => router.push("/tvshows")}
                             className={`cursor-pointer p-2 border ${tv ? 'border-red-600' : 'border-black'} hover:border-red-600`}>TV Shows</p>
-                        <p className='cursor-pointer p-2 border border-black hover:border-red-600'>New and Popular</p>
+                        <p onClick={() => router.push("/newandpopular")}
+                            className={`cursor-pointer p-2 border ${po ? 'border-red-600' : 'border-black'} hover:border-red-600`}>New and Popular</p>
                     </div>
                 </div>
                 <div className='flex items-center'>

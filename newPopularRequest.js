@@ -1,4 +1,4 @@
-const API_KEY = process.env.REACT_APP_API;
+const API_KEY = process.env.API_KEY;
 
 const newPopularRequests = {
     fetchUpcomingMovies: `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`,
