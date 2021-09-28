@@ -10,11 +10,13 @@ import Image from "next/image";
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux';
 import { selectMovie, selectPopular, selectTv } from '../redux/slices/navbarSlice';
+import { useSession, signIn, signOut } from "next-auth/client"
 
 const Navbar = () => {
 
     const [isScrolled, setIsScrolled] = useState(false);
     const router = useRouter();
+    const session = useSession();
     // window.onscroll = () => {
     //     setIsScrolled(window.pageYOffset === 0 ? false : true);
     //     return () => (window.onscroll = null);
@@ -46,8 +48,23 @@ const Navbar = () => {
                     <div className='items-center hidden md:flex'>
                         <p>KID</p>
                         <Notifications className='mx-3' />
-                        <div className="h-10 w-6 pt-2 mr-3">
-                            <Image src={Avatar} alt="logo" width="1080" height="1080" />
+                        <div className="h-10 w-6 pt-2 mr-3 cursor-pointer">
+                            {
+                                (session[0]) ? (
+                                    <>
+                                        {/* <p>Signed in as {session[0].user.name} {session[0].user.email}</p>
+                                      <button onClick={() => signOut()}>Sign out</button> */}
+                                        <Image src={session[0].user.image} alt="logo" width="1080" height="1080" onClick={() => signOut()} />
+                                    </>
+                                ) : (
+                                    <>
+                                        {/* <p>Not signed in</p>
+                                      <button onClick={() => signIn()}>Sign in</button> */}
+                                        <Image src={Avatar} alt="logo" width="1080" height="1080" onClick={() => signIn()} />
+                                    </>
+                                )
+                            }
+                            {/* <Image src={Avatar} alt="logo" width="1080" height="1080" /> */}
                         </div>
                     </div>
                     <MoreVert className='md:hidden hover:scale-150 transition ease-in-out duration-300 cursor-pointer text-2xl' />

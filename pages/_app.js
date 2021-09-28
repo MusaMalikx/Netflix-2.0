@@ -6,17 +6,37 @@
 
 // export default MyApp
 
+// import { Provider } from 'react-redux'
+// import { store } from '../redux/store'
+// import '../styles/globals.css'
+// //import { Provider as AuthProvider } from "next-auth/client"
+
+// const MyApp = ({ Component, pageProps }) => {
+//   return (
+//     <Provider store={store}>
+//       <Component {...pageProps} />
+//     </Provider>
+//   )
+// }
+
+// export default MyApp
+
+// pages/_app.js
+//import { SessionProvider } from "next-auth/react";
+import { Provider as AuthProvider } from "next-auth/client"
 import { Provider } from 'react-redux'
 import { store } from '../redux/store'
 import '../styles/globals.css'
-//import { Provider as AuthProvider } from "next-auth/client"
 
-const MyApp = ({ Component, pageProps }) => {
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}) {
   return (
-    <Provider store={store}>
+    <AuthProvider session={session}>
+      <Provider store={store}>
       <Component {...pageProps} />
-    </Provider>
-  )
+      </Provider>
+    </AuthProvider>
+  );
 }
-
-export default MyApp

@@ -6,6 +6,7 @@ import List from "../components/List";
 import requests from "../request";
 import { movieC, popularC, tvC } from "../redux/slices/navbarSlice";
 import { useDispatch } from "react-redux";
+import { useSession, signIn, signOut } from "next-auth/client"
 
 export async function getServerSideProps(context) {
   const [
@@ -55,12 +56,16 @@ export default function Home({
   documentaries,
 }) {
 
+  const session = useSession()
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(movieC(false));
     dispatch(tvC(false));
     dispatch(popularC(false));
   }, [dispatch])
+
+  //console.log(session);
 
   return (
     <>
@@ -73,6 +78,22 @@ export default function Home({
       <div className="text-white">
         <Navbar />
         <Banner movies={data.results} />
+        {/* <div>
+          {
+            (session[0]) ? (
+              <>
+                <p>Signed in as {session[0].user.name} {session[0].user.email}</p>
+                <button onClick={() => signOut()}>Sign out</button>
+              </>
+            ) : (
+              <>
+                <p>Not signed in</p>
+                <button onClick={() => signIn()}>Sign in</button>
+              </>
+            )
+          }
+
+        </div> */}
         <div className="pb-10">
           <List name="Trending" list={data.results} />
           <List name="Netflix Originals" list={netflixOriginals.results} tp="tv" />
