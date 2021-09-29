@@ -119,15 +119,6 @@ export default function Home({
     warMovies,
     westernMovies,
 }) {
-    //console.log(data);
-    //console.log(process.env.API_KEY)
-    //console.log(netflixOriginals)
-
-    // const [movie, setMovie] = useState({});
-
-    // useEffect(() => {
-    //     setMovie(data.results[Math.floor(Math.random() * data.results.length - 1)]);
-    // }, [data.results]);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(movieC(true));

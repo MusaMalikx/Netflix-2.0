@@ -12,7 +12,6 @@ const ListItem = ({ data, tp }) => {
     const [hover, setHover] = useState(false);
     const [type, setTyp] = useState("");
     const [mv, setMv] = useState([]);
-    //console.log(data);
 
     const dispatch = useDispatch();
     const router = useRouter();
@@ -117,15 +116,11 @@ const ListItem = ({ data, tp }) => {
         dispatch(setItem(data));
         dispatch(setType(type));
         router.push("/preview")
-        // console.log(data);
-        // console.log(type);
     }
 
     return (
         <div className='relative' onClick={handleClick}
             onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-            {/* <h1>{data.name || data.title}</h1> */}
-            {/* <Image src={`https://image.tmdb.org/t/p/original${data?.poster_path}`} alt="Banner" width='1500' height='3000' /> */}
             <div
                 className=' w-28 md:w-40 h-40 md:h-64 rounded-sm md:rounded-md mr-2 border-2 md:border-4 border-white'
                 style={{
@@ -175,58 +170,3 @@ export default ListItem
 // Thriller        53
 // War             10752
 // Western         37
-
-
-{/* {
-                            mv.map(function (mo, i) {
-                                <p key={i}>{mo.genre}</p>
-                            })
-                        } */}
-{/* <div className='flex'>
-                            {
-
-                                // data.genre_ids.map((m, i) => (
-                                //     <p key={i}>{m}, </p>
-                                // ))
-                                mv.map(function (mo) {
-                                    mo.map((m, i) => (
-                                        <p key={i}>{m.genre}</p>
-                                    ))
-                                })
-                                // mv.map(function(mv){
-                                //     console.log(mv)
-                                // })
-                            }
-                        </div> */}
-
-    //console.log(type)
-
-
-
-    //console.log(movies);
-    //var filterData = movies.filter(item => item.id.includes());
-    // var filterData = movies.filter(function (movie) {
-    //     return movie.id.includes(
-    //         data.genre_ids.map((m) => (
-    //             m
-    //         ))
-    //         //35
-    //     )
-    // })
-
-    //let filterData;
-    // data.genre_ids.map(function (g) {
-    //     setMv(mv => [...mv, movies.filter(movie => movie.id.includes(g))])
-    //     //filterData = movies.filter(movie => movie.id.includes(g))
-
-    //     //console.log(filterData)
-
-    // })
-
-    //console.log(mv);
-    //console.log(filterData);
-
-    // data.genre_ids.map((m, i) => (
-    //     <p key={i}>{movies.filter(item => item.id.includes(m))} </p>
-    //     //var filterData = data.filter(item => item.name.includes(search));
-    // ))

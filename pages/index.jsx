@@ -23,17 +23,7 @@ export async function getServerSideProps(context) {
     fetch(requests.fetchRomanceMovies).then((res) => res.json()),
     fetch(requests.fetchDocumentaries).then((res) => res.json()),
   ]);
-  //const data = await fetch(requests.fetchTrending).then(res => res.json());
-  //const netflixOriginals = await fetch(requests.fetchNetflixOriginals).then(res => res.json());
-  //const data = await res.json();
-  //console.log(netflixOriginals);
-
-  // if (!data) {
-  //   return {
-  //     notFound: true,
-  //   };
-  // }
-
+  
   return {
     props: {
       data,
@@ -76,22 +66,7 @@ export default function Home({
       <div className="text-white">
         <Navbar />
         <Banner movies={data.results} />
-        {/* <div>
-          {
-            (session[0]) ? (
-              <>
-                <p>Signed in as {session[0].user.name} {session[0].user.email}</p>
-                <button onClick={() => signOut()}>Sign out</button>
-              </>
-            ) : (
-              <>
-                <p>Not signed in</p>
-                <button onClick={() => signIn()}>Sign in</button>
-              </>
-            )
-          }
-
-        </div> */}
+  
         <div className="pb-10">
           <List name="Trending" list={data.results} />
           <List name="Netflix Originals" list={netflixOriginals.results} tp="tv" />

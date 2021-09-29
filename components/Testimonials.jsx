@@ -8,13 +8,11 @@ import Image from 'next/image';
 
 const Testimonials = ({ type, id }) => {
 
-    //console.log(type, id);
     const [image, setImage] = useState([]);
 
     useEffect(() => {
         async function fetchImage() {
             const req = await axios.get(`https://api.themoviedb.org/3/${type}/${id}/images?api_key=d02666ac6adffd1a4f10b4f15e56beb0`);
-            //console.log(req.data.backdrops);
             setImage(req.data.backdrops);
             return req;
         }
@@ -22,8 +20,6 @@ const Testimonials = ({ type, id }) => {
         return fetchImage();
 
     }, [id, type])
-
-    //console.log(image);
 
     return (
         <div className="image pb-20">
@@ -34,11 +30,6 @@ const Testimonials = ({ type, id }) => {
                 showStatus={false}
                 showThumbs={false}
                 interval={7000}
-            // style={{
-            //     padding: "30px 0px",
-            //     margin: "30px",
-            //     textAlign: "center"
-            // }}
             >
 
                 {

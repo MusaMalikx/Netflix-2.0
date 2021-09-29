@@ -46,17 +46,7 @@ export async function getServerSideProps(context) {
         fetch(tvShowsRequests.fetchWarPolitics).then((res) => res.json()),
         fetch(tvShowsRequests.fetchWestern).then((res) => res.json()),
     ]);
-    //const data = await fetch(requests.fetchTrending).then(res => res.json());
-    //const netflixOriginals = await fetch(requests.fetchNetflixOriginals).then(res => res.json());
-    //const data = await res.json();
-    //console.log(netflixOriginals);
-
-    // if (!data) {
-    //   return {
-    //     notFound: true,
-    //   };
-    // }
-
+  
     return {
         props: {
             data,

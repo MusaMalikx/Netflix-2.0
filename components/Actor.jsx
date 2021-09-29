@@ -1,8 +1,5 @@
-import Image from 'next/image'
 
 const Actor = ({ info }) => {
-
-    //console.log(info);
 
     return (
         <div className="actor mr-4 my-5 relative rounded-lg">
@@ -12,7 +9,6 @@ const Actor = ({ info }) => {
             }}>
             
             </div>
-            {/* <Image src={`https://image.tmdb.org/t/p/original${info?.profile_path}`} alt="" height="250" width="170"  /> */}
             {
                 <div className="information pl-2">
                     <p className="my-2 text-xs md:text-lg">{info.character}</p>

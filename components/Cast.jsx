@@ -8,13 +8,10 @@ const Cast = ({ id, type }) => {
 
     const [cast, setCast] = useState([]);
 
-    //console.log(id);
-
     useEffect(() => {
 
         async function fetchCast() {
             const req = await axios.get(`https://api.themoviedb.org/3/${type}/${id}/credits?api_key=d02666ac6adffd1a4f10b4f15e56beb0&language=en-US`);
-            //console.log(req.data.cast);
             setCast(req.data.cast);
             return req;
         }
@@ -23,7 +20,6 @@ const Cast = ({ id, type }) => {
 
     }, [id, type])
 
-    //console.log(cast);
 
     return (
         <div className="m-10 md:m-20">

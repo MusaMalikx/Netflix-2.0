@@ -27,17 +27,7 @@ export async function getServerSideProps(context) {
         fetch(newPopularRequests.fetchTopRatedMovies).then((res) => res.json()),
         fetch(newPopularRequests.fetchTopRatedTvShows).then((res) => res.json()),
     ]);
-    //const data = await fetch(requests.fetchTrending).then(res => res.json());
-    //const netflixOriginals = await fetch(requests.fetchNetflixOriginals).then(res => res.json());
-    //const data = await res.json();
-    //console.log(netflixOriginals);
-
-    // if (!data) {
-    //   return {
-    //     notFound: true,
-    //   };
-    // }
-
+    
     return {
         props: {
             playingMo,
@@ -64,8 +54,6 @@ export default function Home({
     topTv,
 }) {
 
-    //console.log(playingTv);
-
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(movieC(false));
@@ -86,11 +74,9 @@ export default function Home({
                 <Banner movies={playingMo.results} />
                 <div className="pb-10">
                     <List name="Playing Movies" list={playingMo.results} tp="movie" />
-                    {/* <List name="Playing Tv Shows" list={playingTv.results} /> */}
                     <List name="Popular Movies" list={popularMo.results} tp="movie" />
                     <List name="Popular Tv Shows" list={popularTv.results} />
                     <List name="Upcoming Movies" list={upcomMo.results} tp="movie" />
-                    {/* <List name="Upcoming Tv Shows" list={upcomTv.results} /> */}
                     <List name="Tv shows on the air" list={airTv.results} tp="tv" />
                     <List name="Tv shows airing today" list={airTod.results} tp="tv" />
                     <List name="Top Rated Movies" list={topMo.results} tp="movie" />
