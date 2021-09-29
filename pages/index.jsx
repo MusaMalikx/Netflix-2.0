@@ -6,7 +6,6 @@ import List from "../components/List";
 import requests from "../request";
 import { movieC, popularC, tvC } from "../redux/slices/navbarSlice";
 import { useDispatch } from "react-redux";
-import { useSession, signIn, signOut } from "next-auth/client"
 
 export async function getServerSideProps(context) {
   const [
@@ -56,7 +55,6 @@ export default function Home({
   documentaries,
 }) {
 
-  const session = useSession()
 
   const dispatch = useDispatch();
   useEffect(() => {

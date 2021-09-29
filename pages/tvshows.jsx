@@ -119,23 +119,23 @@ export default function Home({
                 <Navbar />
                 <Banner movies={data.results} />
                 <div className="pb-10">
-                    <List name="Trending TV shows" list={data.results} />
-                    <List name="Action Adventure Tv shows" list={actionAdventureShows.results} />
-                    <List name="Animation Tv shows" list={animationShows.results} />
-                    <List name="Comedy Tv shows" list={comedyShows.results} />
-                    <List name="Crime Tv shows" list={crimeShows.results} />
-                    <List name="Documentary Tv shows" list={documentaryShows.results} />
-                    <List name="Drama Tv shows" list={dramaShows.results} />
-                    <List name="Family Tv shows" list={familyShows.results} />
-                    <List name="Kids Tv shows" list={kidsShows.results} />
-                    <List name="Mystery Tv shows" list={mysteryShows.results} />
-                    <List name="News Tv shows" list={newsShows.results} />
-                    <List name="Reality Tv shows" list={realityShows.results} />
-                    <List name="sci-fi fantasy Tv shows" list={sciFiFantasyShows.results} />
-                    <List name="soap Tv shows" list={soapShows.results} />
-                    <List name="talk Tv shows" list={talkShows.results} />
-                    <List name="war politics Tv shows" list={warPoliticsShows.results} />
-                    <List name="western Tv shows" list={westernShows.results} />
+                    <List name="Trending TV shows" list={data.results} tp="tv" />
+                    <List name="Action Adventure Tv shows" list={actionAdventureShows.results} tp="tv" />
+                    <List name="Animation Tv shows" list={animationShows.results} tp="tv" />
+                    <List name="Comedy Tv shows" list={comedyShows.results} tp="tv" />
+                    <List name="Crime Tv shows" list={crimeShows.results} tp="tv" />
+                    <List name="Documentary Tv shows" list={documentaryShows.results} tp="tv" />
+                    <List name="Drama Tv shows" list={dramaShows.results} tp="tv" />
+                    <List name="Family Tv shows" list={familyShows.results} tp="tv" />
+                    <List name="Kids Tv shows" list={kidsShows.results} tp="tv" />
+                    <List name="Mystery Tv shows" list={mysteryShows.results} tp="tv" />
+                    <List name="News Tv shows" list={newsShows.results} tp="tv" />
+                    <List name="Reality Tv shows" list={realityShows.results} tp="tv" />
+                    <List name="sci-fi fantasy Tv shows" list={sciFiFantasyShows.results} tp="tv" />
+                    <List name="soap Tv shows" list={soapShows.results} tp="tv" />
+                    <List name="talk Tv shows" list={talkShows.results} tp="tv" />
+                    <List name="war politics Tv shows" list={warPoliticsShows.results} tp="tv" />
+                    <List name="western Tv shows" list={westernShows.results} tp="tv" />
 
                 </div>
             </div>

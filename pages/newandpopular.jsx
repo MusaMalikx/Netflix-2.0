@@ -85,16 +85,16 @@ export default function Home({
                 <Navbar />
                 <Banner movies={playingMo.results} />
                 <div className="pb-10">
-                    <List name="Playing Movies" list={playingMo.results} />
+                    <List name="Playing Movies" list={playingMo.results} tp="movie" />
                     {/* <List name="Playing Tv Shows" list={playingTv.results} /> */}
-                    <List name="Popular Movies" list={popularMo.results} />
+                    <List name="Popular Movies" list={popularMo.results} tp="movie" />
                     <List name="Popular Tv Shows" list={popularTv.results} />
-                    <List name="Upcoming Movies" list={upcomMo.results} />
+                    <List name="Upcoming Movies" list={upcomMo.results} tp="movie" />
                     {/* <List name="Upcoming Tv Shows" list={upcomTv.results} /> */}
-                    <List name="Tv shows on the air" list={airTv.results} />
-                    <List name="Tv shows airing today" list={airTod.results} />
-                    <List name="Top Rated Movies" list={topMo.results} />
-                    <List name="Top Rated Tv Shows" list={topTv.results} />
+                    <List name="Tv shows on the air" list={airTv.results} tp="tv" />
+                    <List name="Tv shows airing today" list={airTod.results} tp="tv" />
+                    <List name="Top Rated Movies" list={topMo.results} tp="movie" />
+                    <List name="Top Rated Tv Shows" list={topTv.results} tp="tv" />
                 </div>
             </div>
         </>
