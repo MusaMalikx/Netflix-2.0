@@ -56,7 +56,7 @@ const Navbar = () => {
                         </div>
                     </div>
                     <MoreVert onClick={()=> setClick(!click)}
-                    className='flex md:hidden hover:scale-150 transition ease-in-out duration-300 cursor-pointer text-2xl' />
+                    className='flex md:hidden hover:scale-150 transition ease-in-out duration-300 cursor-pointer text-2xl md:text-black' />
                     {
                         click && (
                             <div className='md:hidden absolute flex justify-between flex-col top-16 right-5 bg-black p-3 border-2 border-red-600'>
